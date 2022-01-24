@@ -71,4 +71,4 @@ console.log(arr_2);
  reverseArray(['C#', 'JS', 'Ruby','Python' ],[])
  
  
-// module.exports = {findMax , sumNums, reverseArray};
+ module.exports = {findMax , sumNums, reverseArray};
