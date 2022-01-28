@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 
 // 1) ---------------------
 // 
@@ -9,21 +9,20 @@
 //  
 // ------------------------
  const findMax = (arr)=>{
-    let max;
-   for(let i=0;i<arr.length-1;i++){
-for(let j=1;j<=arr.length;j++){
-    if(arr[i]>arr[j]){
+     let max=0;
+    for(let i=0;i<arr.length;i++){
+     if(arr[i]>max){
 
         max=arr[i]
         
     }
         
-}
+ }
 
-   } 
-    return max;
-}
-console.log(findMax([12, 32, 22, 45, 78, 12,50 ]));
+    
+   return max;
+ }
+//  console.log(findMax([12, 32, 22, 45, 78, 12,50 ]));
 
 // 2) ---------------------
 // 
@@ -34,20 +33,20 @@ console.log(findMax([12, 32, 22, 45, 78, 12,50 ]));
 //  
 // ------------------------
 
-const sumNums = (arr)=>{
-     let sum=0 ;
+ const sumNums = (arr)=>{
+      let sum=0 ;
     
 
-     for(let i=0;i<arr.length;i++ ){
+      for(let i=0;i<arr.length;i++ ){
         
-         if(typeof arr[i]==='number'){
-             sum=sum+arr[i]
-         }
-     }
+          if(typeof arr[i]==='number'){
+            sum=sum+arr[i]
+          }
+      }
 
-     return sum;
-}
-console.log(sumNums([20, '234', 'car', 41, 20, 'chair']));
+      return sum;
+ }
+// console.log(sumNums([20, '234', 'car', 41, 20, 'chair']));
 
 
 // 3) ---------------------
@@ -59,16 +58,16 @@ console.log(sumNums([20, '234', 'car', 41, 20, 'chair']));
 // 
 // ------------------------
 
- const reverseArray = (arr,arr_2)=>{
-    for(let i=arr.length-1, j=0  ; i>=0 ;i--,j++){
+ const reverseArray = (arr)=>{
+    let arr_2=[];
+    for(let i=0; i <arr.length ;i++){
         
-        arr_2[j]=arr[i]
+        arr_2.unshift(arr[i])
 
 
     }
-console.log(arr_2);
+return arr_2;
  }
- reverseArray(['C#', 'JS', 'Ruby','Python' ],[])
+
  
- 
- module.exports = {findMax , sumNums, reverseArray};
+  module.exports = {findMax , sumNums, reverseArray};
