@@ -144,6 +144,7 @@ const applicationsStatics = (arr) => {
         }
 
 for(let i=0;i<arr.length;i++){
+    totalApplicants++;
     if((arr[i].yearsOfExperience<1 )&& (arr[i].firstName== null || arr[i].lastName == null||arr[i].firstName==""||arr[i].lastName=="")){
         result.rejectedApplicants++;  
     }
@@ -294,22 +295,17 @@ let data = {
 //  Note that:
 //  1- This is not the exact data you will be getting every time and the solution should be dynamic
 //  2- You need to round the average to the nearest lower number 
-let sum = 0 ;
 const classesAvg = (data) => {
-    for(let i=0 ; i<data.grades.length;i++){
-        for(let m=0;m<data.grades[i].classes.length;m++){
-            sum = 0 ;
-            for(let j=0 ; j < data.grades[i].classes[m].classScores.length ; j++ ){
-                sum = sum+data.grades[i].classes[m].classScores[j]; 
-            }
-
+    for(let i = 0 ; i<data.grades.length;i++){
+        for(let j = 0 ; j<data.grades[i].classes.length;j++){
+            let average = (arr) => arr.reduce((a, b) => a + b) / arr.length; 
+            data.grades[i].classes[j].avg = Math.floor(average(data.grades[i].classes[j].classScores));
+        
+    
         }
-            
-            data.grades[i].classes[m].classScores.avg= sum/ data.grades[i].classes[m].classScores.length
-            let avg=  Math.floor(data.grades[i].classes[m].classScores.avg)
-            
-        }
-    };
+    }
+    return data;
+};
 
 
 module.exports = { objLat, cvFormatter, applicationsStatics, classesAvg };
