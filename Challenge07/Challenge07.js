@@ -144,7 +144,7 @@ const applicationsStatics = (arr) => {
         }
 
 for(let i=0;i<arr.length;i++){
-    totalApplicants++;
+    let= totalApplicants++;
     if((arr[i].yearsOfExperience<1 )&& (arr[i].firstName== null || arr[i].lastName == null||arr[i].firstName==""||arr[i].lastName=="")){
         result.rejectedApplicants++;  
     }
